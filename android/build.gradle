@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        buildToolsVersion = "36.0.0"
+        minSdkVersion = 26
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "1.9.22"
+        firebaseBomVersion = "34.2.0"
+        playServicesAuthVersion = "21.4.0"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("com.google.gms:google-services:4.4.0")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+// Firebase 프로젝트 설정
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Samsung Health SDK Repository
+        maven { url 'https://repo.samsung.com/repository/public/' }
+    }
+    
+    project.ext {
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        minSdkVersion = 24
+        buildToolsVersion = "36.0.0"
+    }
+}

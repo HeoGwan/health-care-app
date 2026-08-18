@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/styles/asset/fonts/Pretendard-Bold.otf",
+      "sha1": "bd4ac82cc26cf93c89cfbfbbba8825c5198b5b99"
+    },
+    {
+      "path": "src/styles/asset/fonts/Pretendard-Medium.otf",
+      "sha1": "eba1a37734a9c4fe3d84f540ce8d812d366b2b22"
+    },
+    {
+      "path": "src/styles/asset/fonts/Pretendard-Regular.otf",
+      "sha1": "e205ef0a314d9da4e1a9382e0e65a25900a9ac7b"
+    },
+    {
+      "path": "src/styles/asset/fonts/Pretendard-SemiBold.otf",
+      "sha1": "916a62152b7fd08ff43d239de04303a465521fe6"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroB.ttf",
+      "sha1": "1a27e81be9c1a27dbac17d0b743155d29ad88371"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroL.ttf",
+      "sha1": "1e4e1cfdfff2c242b1976592abcd9739817ec79d"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroM.ttf",
+      "sha1": "862c097443cdfb24050904d3a9bd9ed80e395b5b"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroOTFB.otf",
+      "sha1": "95c8cb854a9b44bad8a3630145374870774bbb7c"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroOTFL.otf",
+      "sha1": "e25b0696bd282ba0d8ce33657e45e50ccf0b3e3d"
+    },
+    {
+      "path": "src/styles/asset/fonts/SBAggroOTFM.otf",
+      "sha1": "0a67782cfd34062191d9e41f86006fe506e4ad8f"
+    }
+  ]
+}

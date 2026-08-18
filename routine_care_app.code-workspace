@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "name": "React Native App",
+      "path": "."
+    },
+    {
+      "name": "Android Project",
+      "path": "./android"
+    }
+  ],
+  "settings": {
+    "java.import.gradle.enabled": false,
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/ios/**": true,
+      "**/android/**/build/**": true
+    },
+    "java.compile.nullAnalysis.mode": "disabled"
+  }
+}

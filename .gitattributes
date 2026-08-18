@@ -1,0 +1,35 @@
+# 모든 텍스트 파일에 대한 줄바꿈 설정
+* text=auto
+
+# 특정 파일 타입에 대한 설정
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Android 관련 파일
+*.xml text eol=lf
+*.gradle text eol=lf
+*.properties text eol=lf
+
+# iOS 관련 파일  
+*.plist text eol=lf
+*.pbxproj text eol=lf
+
+# 바이너리 파일은 변환하지 않음
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.jar binary
+*.so binary
+*.a binary

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279541552435",
+    "project_id": "routine-care",
+    "storage_bucket": "routine-care.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279541552435:android:9637eb971bd3db281e5a46",
+        "android_client_info": {
+          "package_name": "com.routinecare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5f3IQMuPctuvZkdCiNmfpJJ0HwOKR_XA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

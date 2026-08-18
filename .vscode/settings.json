@@ -1,0 +1,37 @@
+{
+  // React Native / TypeScript 설정
+  "eslint.workingDirectories": ["."],
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+
+  // Android/Kotlin 설정 - Gradle 동기화 활성화
+  "java.import.gradle.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "kotlin.languageServer.enabled": true,
+
+  // 파일 인코딩 설정 - BOM 없는 UTF-8 사용
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+  "[java]": {
+    "files.encoding": "utf8"
+  },
+  "[kotlin]": {
+    "files.encoding": "utf8"
+  },
+
+  // 파일 연관성
+  "files.associations": {
+    "*.gradle": "groovy",
+    "*.kt": "kotlin"
+  },
+
+  // 불필요한 파일 숨기기
+  "files.exclude": {
+    "**/android/**/build/**": true,
+    "**/android/**/gradle/wrapper/**": true,
+    "**/node_modules/**": true,
+    "**/.git/**": true
+  },
+  "java.compile.nullAnalysis.mode": "automatic"
+}

@@ -1,0 +1,28 @@
+export const DEFAULT_CONFIG = {
+  DEFAULT_URL: 'https://routine-care.insystem.kr',
+  SHOW_HEADER: true,
+  JAVASCRIPT_ENABLED: true,
+  DOM_STORAGE_ENABLED: true,
+  ALLOWS_BACK_FORWARD_GESTURES: true,
+};
+
+export const COLORS = {
+  PRIMARY: '#007AFF',
+  SECONDARY: '#34C759',
+  ERROR: '#FF3B30',
+  WARNING: '#FF9500',
+  BACKGROUND: '#F2F2F7',
+  WHITE: '#FFFFFF',
+  BLACK: '#000000',
+  GRAY: '#8E8E93',
+  LIGHT_GRAY: '#C7C7CC',
+};
+
+export const SIZES = {
+  HEADER_HEIGHT: 60,
+  BUTTON_HEIGHT: 44,
+  ICON_SIZE: 24,
+  BORDER_RADIUS: 8,
+  PADDING: 16,
+  MARGIN: 12,
+};

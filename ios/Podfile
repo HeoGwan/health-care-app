@@ -1,0 +1,76 @@
+# Podfile
+
+# 1. 전역 설정 (Global Settings)
+# ------------------------------------------------
+# 모든 타겟에 공통으로 적용될 설정을 파일 최상단에 한 번만 정의합니다.
+
+# React Native 스크립트 로드
+require Pod::Executable.execute_command('node', ['-p',
+ 'require.resolve(
+ "react-native/scripts/react_native_pods.rb",
+ {paths: [process.argv[1]]},
+ )', __dir__]).strip
+
+# 최소 iOS 지원 버전 설정
+platform :ios, '15.1'
+
+# Firebase와 같은 Swift 기반 라이브러리를 위한 정적 프레임워크 사용 설정
+use_frameworks! :linkage => :static
+$RNFirebaseAsStaticFramework = true # @react-native-firebase에 필요
+
+prepare_react_native_project!
+
+# 2. 개별 타겟 설정 (Individual Target Settings)
+# ------------------------------------------------
+# 각 앱 타겟에 필요한 설정을 별도의 블록으로 정의합니다.
+
+target 'RoutineCareApp' do
+  config = use_native_modules!
+
+  # 'RoutineCareApp' 타겟에만 필요한 HealthKit Pod 추가
+  pod 'RNHealthKit', :path => '../node_modules/@react-native-community/react-native-healthkit', :modular_headers => true if File.exist?('../node_modules/@react-native-community/react-native-healthkit')
+  # Firebase dependencies
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    :new_arch_enabled => false,
+    :fabric_enabled => false,
+    :hermes_enabled => false
+  )
+end
+
+
+# 3. 공통 후처리 스크립트 (Common Post-Install Script)
+# ------------------------------------------------
+# 모든 타겟에 공통으로 적용될 빌드 설정 수정 작업을 한 곳에서 처리합니다.
+
+post_install do |installer|
+  react_native_post_install(installer)
+
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # 표준 C++ 버전 설정
+      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++20'
+      config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
+      
+      # Swift/Objective-C 인터페이스 생성 문제 해결
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      
+      # 모든 Pod의 최소 지원 버전을 강제로 통일
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.1'
+      
+      # M1/M2/M3 Mac에서 시뮬레이터 빌드를 위한 아키텍처 설정
+      if target.platform_name == :ios
+        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      end
+      
+      # Firebase 관련 Pod의 Swift 버전 호환성 설정
+      if target.name.start_with?('Firebase') || target.name.include?('firebase')
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+      end
+    end
+  end
+end
